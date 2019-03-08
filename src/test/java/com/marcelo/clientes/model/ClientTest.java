@@ -17,7 +17,7 @@ public class ClientTest {
 		Calendar cal = Calendar.getInstance();
 		
 		//execução
-		Client client = new Client("Marcelo Henrique Machado","70999323067",cal,"marcelo@teste.com","991000000");
+		Client client = new Client("Marcelo Henrique Machado","70999323067","14/06/1996","marcelo@teste.com","991000000");
 		client.getId();
 		client.setId(2);
 	}

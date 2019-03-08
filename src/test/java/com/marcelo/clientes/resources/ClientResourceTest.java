@@ -136,12 +136,11 @@ public class ClientResourceTest {
 
 	
 	private List<Client> listClient() {
-		Calendar cal = Calendar.getInstance();
 		List<Client> listClientAux = new ArrayList<>();
 		Client clientAux = new Client();
 		clientAux.setNome("Marcelo Henrique");
 		clientAux.setCpf("70999323067");
-		clientAux.setNascimento(cal);
+		clientAux.setNascimento("14/06/1996");
 		clientAux.setEmail("marcelo@teste.com");
 		clientAux.setTelefone("999990000");
 		listClientAux.add(clientAux);

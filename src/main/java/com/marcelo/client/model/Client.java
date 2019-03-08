@@ -24,7 +24,7 @@ public class Client {
 	String nome;
 
 	@NotNull
-	Calendar nascimento;
+	String nascimento;
 
 	@NotEmpty(message = "Preenchimento Obrigatorio")
 	String email;
@@ -39,7 +39,7 @@ public class Client {
 
 	public Client(@NotEmpty(message = "Preenchimento Obrigatorio") String name,
 			@NotEmpty(message = "Preenchimento Obrigatorio") String cpf,
-			@NotEmpty(message = "Preenchimento Obrigatorio") Calendar nascimento,
+			@NotEmpty(message = "Preenchimento Obrigatorio") String nascimento,
 			@NotEmpty(message = "Preenchimento Obrigatorio") String email,
 			@NotEmpty(message = "Preenchimento Obrigatorio") String telefone) {
 		super();
@@ -74,11 +74,11 @@ public class Client {
 		this.cpf = cpf;
 	}
 
-	public Calendar getNascimento() {
+	public String getNascimento() {
 		return nascimento;
 	}
 
-	public void setNascimento(Calendar nascimento) {
+	public void setNascimento(String nascimento) {
 		this.nascimento = nascimento;
 	}
 

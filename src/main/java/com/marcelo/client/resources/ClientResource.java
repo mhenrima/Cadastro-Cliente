@@ -7,6 +7,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,8 +22,13 @@ import com.marcelo.client.model.Client;
 import com.marcelo.client.repository.ClientRepository;
 import com.marcelo.client.service.ClientServiceControl;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 @RestController
 @RequestMapping(value = "/Clientes")
+@Api(value = "CADASTRO-CLIENTES")
+@CrossOrigin(origins = "*")
 public class ClientResource {
 
 	@Autowired
@@ -32,6 +38,7 @@ public class ClientResource {
 	private ClientRepository clienteRepository;
 
 	@PostMapping
+	@ApiOperation(value = "Cadastra Clientes")
 	public ResponseEntity<Void> cadastraClientes(@Valid @RequestBody Client client) {
 		Client objResponse = clientServiceControl.cadastraCliente(client);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(objResponse.getCpf())
@@ -40,6 +47,7 @@ public class ClientResource {
 	}
 
 	@PutMapping
+	@ApiOperation(value = "Altera Clientes")
 	public ResponseEntity<Client> updateClient(@RequestBody Client clientUpdate, @RequestParam String cpf) {
 		List<Client> clientAll = clienteRepository.findAll();
 		for (Client client : clientAll) {
@@ -60,6 +68,7 @@ public class ClientResource {
 	}
 
 	@DeleteMapping
+	@ApiOperation(value = "Exclui Clientes")
 	public void deleteClient(@RequestParam String cpf) {
 		List<Client> clientAll = clienteRepository.findAll();
 		Integer id = null;
@@ -72,6 +81,7 @@ public class ClientResource {
 	}
 
 	@GetMapping
+	@ApiOperation(value = "Lista Clientes")
 	public ResponseEntity<List<Client>> listaClient() {
 		List<Client> listAll = clientServiceControl.listaClientes();
 
