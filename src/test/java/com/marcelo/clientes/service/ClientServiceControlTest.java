@@ -46,11 +46,10 @@ public class ClientServiceControlTest {
 	@Test
 	public void test4CadastraCliente() {
 		//preparação
-		Calendar cal = Calendar.getInstance();
 		Client clientAux = new Client();
 		clientAux.setNome("Marcelo Henrique");
 		clientAux.setCpf("70999323067");
-		clientAux.setNascimento(cal);
+		clientAux.setNascimento("14/06/1996");
 		clientAux.setEmail("marcelo@teste.com");
 		clientAux.setTelefone("999990000");
 		
@@ -61,10 +60,9 @@ public class ClientServiceControlTest {
 	@Test(expected = NullPointerException.class) 
 	public void test4CadastraClienteFailNameNull() {
 		//preparação
-		Calendar cal = Calendar.getInstance();
 		Client clientAux = new Client();
 		clientAux.setCpf("70999323067");
-		clientAux.setNascimento(cal);
+		clientAux.setNascimento("14/06/1996");
 		clientAux.setEmail("marcelo@teste.com");
 		clientAux.setTelefone("999990000");
 		
@@ -75,11 +73,10 @@ public class ClientServiceControlTest {
 	@Test(expected = InvalidParameterException.class) 
 	public void test4CadastraClienteFailCpfInvalido() {
 		//preparação
-		Calendar cal = Calendar.getInstance();
 		Client clientAux = new Client();
 		clientAux.setNome("Marcelo Henrique");
 		clientAux.setCpf("70999322267");
-		clientAux.setNascimento(cal);
+		clientAux.setNascimento("14/06/1996");
 		clientAux.setEmail("marcelo@teste.com");
 		clientAux.setTelefone("999990000");
 		
@@ -92,7 +89,7 @@ public class ClientServiceControlTest {
 		Calendar cal = Calendar.getInstance();
 		Client clientAux = new Client();
 		clientAux.setNome("Marcelo Henrique");
-		clientAux.setNascimento(cal);
+		clientAux.setNascimento("14/06/1996");
 		clientAux.setEmail("marcelo@teste.com");
 		clientAux.setTelefone("999990000");
 		
@@ -116,11 +113,10 @@ public class ClientServiceControlTest {
 	@Test(expected = NullPointerException.class) 
 	public void test4CadastraClienteFailEmailNull() {
 		//preparação
-		Calendar cal = Calendar.getInstance();
 		Client clientAux = new Client();
 		clientAux.setNome("Marcelo Henrique");
 		clientAux.setCpf("70999323067");
-		clientAux.setNascimento(cal);
+		clientAux.setNascimento("14/06/1996");
 		clientAux.setTelefone("999990000");
 		
 		//execução
@@ -130,11 +126,10 @@ public class ClientServiceControlTest {
 	@Test(expected = NullPointerException.class) 
 	public void test4CadastraClienteFailTelefoneNull() {
 		//preparação
-		Calendar cal = Calendar.getInstance();
 		Client clientAux = new Client();
 		clientAux.setNome("Marcelo Henrique");
 		clientAux.setCpf("70999323067");
-		clientAux.setNascimento(cal);
+		clientAux.setNascimento("14/06/1996");
 		clientAux.setEmail("marcelo@teste.com");
 		
 		//execução
